@@ -7,11 +7,20 @@
 //
 
 #import "XCBaseViewController.h"
+#import "LoginViewController.h"
+#import "NavigationViewController.h"
+#import "MapViewController.h"
 
 @interface XCRootViewController : XCBaseViewController
+{
+    LoginViewController* m_loginViewController;
+    NavigationViewController* m_naviViewController;
+    MapViewController* m_mapViewController;
+    
+    int m_angle;
+}
 
 @property (retain, nonatomic) IBOutlet UIView *mainView;
-@property (retain, nonatomic) IBOutlet UIView *navigationView;
-@property (retain, nonatomic) IBOutlet UIView *shadeView; 
+@property (retain, nonatomic) IBOutlet UIView *shadeView;
 
 @end

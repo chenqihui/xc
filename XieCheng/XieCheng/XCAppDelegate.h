@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "XCBaseViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

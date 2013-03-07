@@ -12,22 +12,17 @@
 		74172C6016E1FFC2003D7E3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74172C5F16E1FFC2003D7E3A /* CoreGraphics.framework */; };
 		74172C6616E1FFC2003D7E3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 74172C6416E1FFC2003D7E3A /* InfoPlist.strings */; };
 		74172C6816E1FFC2003D7E3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 74172C6716E1FFC2003D7E3A /* main.m */; };
-		74172C6C16E1FFC2003D7E3A /* XCAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 74172C6B16E1FFC2003D7E3A /* XCAppDelegate.mm */; };
+		74172C6C16E1FFC2003D7E3A /* XCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 74172C6B16E1FFC2003D7E3A /* XCAppDelegate.m */; };
 		74172C6E16E1FFC2003D7E3A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 74172C6D16E1FFC2003D7E3A /* Default.png */; };
 		74172C7016E1FFC2003D7E3A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74172C6F16E1FFC2003D7E3A /* Default@2x.png */; };
 		74172C7216E1FFC2003D7E3A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74172C7116E1FFC2003D7E3A /* Default-568h@2x.png */; };
 		74172C7A16E22F3F003D7E3A /* XCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74172C7916E22F3E003D7E3A /* XCBaseViewController.m */; };
 		74172C7D16E22FA6003D7E3A /* XCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74172C7C16E22FA6003D7E3A /* XCRootViewController.m */; };
 		74172C8416E2395B003D7E3A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74172C8316E2395B003D7E3A /* LoginViewController.m */; };
+		7434520916E76C9C00BA5354 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7434520816E76C9C00BA5354 /* NavigationViewController.m */; };
+		7453046216E7847E00E14138 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7453046116E7847E00E14138 /* MapViewController.m */; };
 		749B447716E3A44E00E9C2C5 /* XCContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 749B447616E3A44E00E9C2C5 /* XCContext.m */; };
-		B114917216E5C93D00B39674 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B114916F16E5C93D00B39674 /* CoreLocation.framework */; };
-		B114917316E5C93D00B39674 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B114917016E5C93D00B39674 /* CoreTelephony.framework */; };
-		B114917416E5C93D00B39674 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B114917116E5C93D00B39674 /* CoreText.framework */; };
-		B114917616E5C94900B39674 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B114917516E5C94900B39674 /* QuartzCore.framework */; };
-		B114917816E5C95100B39674 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B114917716E5C95100B39674 /* SystemConfiguration.framework */; };
-		B114917A16E5C95A00B39674 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B114917916E5C95A00B39674 /* libxml2.2.dylib */; };
-		B114917D16E5C97600B39674 /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B114917C16E5C97600B39674 /* AMap.bundle */; };
-		B1FAE99516E5CAB400FC8DD3 /* libMAMapKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B1FAE99416E5CAB400FC8DD3 /* libMAMapKit.a */; };
+		74FB799016E4E66E0034370A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74FB798F16E4E66E0034370A /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +35,7 @@
 		74172C6716E1FFC2003D7E3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		74172C6916E1FFC2003D7E3A /* XieCheng-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XieCheng-Prefix.pch"; sourceTree = "<group>"; };
 		74172C6A16E1FFC2003D7E3A /* XCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCAppDelegate.h; sourceTree = "<group>"; };
-		74172C6B16E1FFC2003D7E3A /* XCAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = XCAppDelegate.mm; sourceTree = "<group>"; };
+		74172C6B16E1FFC2003D7E3A /* XCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCAppDelegate.m; sourceTree = "<group>"; };
 		74172C6D16E1FFC2003D7E3A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		74172C6F16E1FFC2003D7E3A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		74172C7116E1FFC2003D7E3A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -50,36 +45,14 @@
 		74172C7C16E22FA6003D7E3A /* XCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCRootViewController.m; sourceTree = "<group>"; };
 		74172C8216E2395B003D7E3A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		74172C8316E2395B003D7E3A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		7434520716E76C9C00BA5354 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		7434520816E76C9C00BA5354 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		7434520E16E7701100BA5354 /* ViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHelper.h; sourceTree = "<group>"; };
+		7453046016E7847E00E14138 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		7453046116E7847E00E14138 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		749B447516E3A44E00E9C2C5 /* XCContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCContext.h; sourceTree = "<group>"; };
 		749B447616E3A44E00E9C2C5 /* XCContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCContext.m; sourceTree = "<group>"; };
-		B114916F16E5C93D00B39674 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		B114917016E5C93D00B39674 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		B114917116E5C93D00B39674 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		B114917516E5C94900B39674 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		B114917716E5C95100B39674 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B114917916E5C95A00B39674 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
-		B114917C16E5C97600B39674 /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
-		B1FAE97D16E5CAB400FC8DD3 /* MAAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAAnnotation.h; sourceTree = "<group>"; };
-		B1FAE97E16E5CAB400FC8DD3 /* MAAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAAnnotationView.h; sourceTree = "<group>"; };
-		B1FAE97F16E5CAB400FC8DD3 /* MACircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACircle.h; sourceTree = "<group>"; };
-		B1FAE98016E5CAB400FC8DD3 /* MACircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACircleView.h; sourceTree = "<group>"; };
-		B1FAE98116E5CAB400FC8DD3 /* MAGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAGeometry.h; sourceTree = "<group>"; };
-		B1FAE98216E5CAB400FC8DD3 /* MAMapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMapKit.h; sourceTree = "<group>"; };
-		B1FAE98316E5CAB400FC8DD3 /* MAMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMapView.h; sourceTree = "<group>"; };
-		B1FAE98416E5CAB400FC8DD3 /* MAMultiPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAMultiPoint.h; sourceTree = "<group>"; };
-		B1FAE98516E5CAB400FC8DD3 /* MAOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAOverlay.h; sourceTree = "<group>"; };
-		B1FAE98616E5CAB400FC8DD3 /* MAOverlayPathView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAOverlayPathView.h; sourceTree = "<group>"; };
-		B1FAE98716E5CAB400FC8DD3 /* MAOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAOverlayView.h; sourceTree = "<group>"; };
-		B1FAE98816E5CAB400FC8DD3 /* MAPinAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPinAnnotationView.h; sourceTree = "<group>"; };
-		B1FAE98916E5CAB400FC8DD3 /* MAPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPointAnnotation.h; sourceTree = "<group>"; };
-		B1FAE98A16E5CAB400FC8DD3 /* MAPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPolygon.h; sourceTree = "<group>"; };
-		B1FAE98B16E5CAB400FC8DD3 /* MAPolygonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPolygonView.h; sourceTree = "<group>"; };
-		B1FAE98C16E5CAB400FC8DD3 /* MAPolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPolyline.h; sourceTree = "<group>"; };
-		B1FAE98D16E5CAB400FC8DD3 /* MAPolylineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPolylineView.h; sourceTree = "<group>"; };
-		B1FAE98E16E5CAB400FC8DD3 /* MAShape.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAShape.h; sourceTree = "<group>"; };
-		B1FAE98F16E5CAB400FC8DD3 /* MATypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MATypes.h; sourceTree = "<group>"; };
-		B1FAE99016E5CAB400FC8DD3 /* MAUserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAUserLocation.h; sourceTree = "<group>"; };
-		B1FAE99416E5CAB400FC8DD3 /* libMAMapKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMAMapKit.a; sourceTree = "<group>"; };
+		74FB798F16E4E66E0034370A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,16 +60,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B114917A16E5C95A00B39674 /* libxml2.2.dylib in Frameworks */,
-				B114917816E5C95100B39674 /* SystemConfiguration.framework in Frameworks */,
-				B114917616E5C94900B39674 /* QuartzCore.framework in Frameworks */,
-				B114917216E5C93D00B39674 /* CoreLocation.framework in Frameworks */,
-				B114917316E5C93D00B39674 /* CoreTelephony.framework in Frameworks */,
-				B114917416E5C93D00B39674 /* CoreText.framework in Frameworks */,
+				74FB799016E4E66E0034370A /* QuartzCore.framework in Frameworks */,
 				74172C5C16E1FFC2003D7E3A /* UIKit.framework in Frameworks */,
 				74172C5E16E1FFC2003D7E3A /* Foundation.framework in Frameworks */,
 				74172C6016E1FFC2003D7E3A /* CoreGraphics.framework in Frameworks */,
-				B1FAE99516E5CAB400FC8DD3 /* libMAMapKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,12 +73,7 @@
 		74172C4C16E1FFC2003D7E3A = {
 			isa = PBXGroup;
 			children = (
-				B114917916E5C95A00B39674 /* libxml2.2.dylib */,
-				B114917716E5C95100B39674 /* SystemConfiguration.framework */,
-				B114917516E5C94900B39674 /* QuartzCore.framework */,
-				B114916F16E5C93D00B39674 /* CoreLocation.framework */,
-				B114917016E5C93D00B39674 /* CoreTelephony.framework */,
-				B114917116E5C93D00B39674 /* CoreText.framework */,
+				74FB798F16E4E66E0034370A /* QuartzCore.framework */,
 				74172C6116E1FFC2003D7E3A /* XieCheng */,
 				74172C5A16E1FFC2003D7E3A /* Frameworks */,
 				74172C5816E1FFC2003D7E3A /* Products */,
@@ -139,16 +101,19 @@
 		74172C6116E1FFC2003D7E3A /* XieCheng */ = {
 			isa = PBXGroup;
 			children = (
-				B114917B16E5C97600B39674 /* Resources */,
 				749B447416E3A44E00E9C2C5 /* Logic */,
 				74172C6A16E1FFC2003D7E3A /* XCAppDelegate.h */,
-				74172C6B16E1FFC2003D7E3A /* XCAppDelegate.mm */,
+				74172C6B16E1FFC2003D7E3A /* XCAppDelegate.m */,
 				74172C7816E22F3E003D7E3A /* XCBaseViewController.h */,
 				74172C7916E22F3E003D7E3A /* XCBaseViewController.m */,
 				74172C7B16E22FA6003D7E3A /* XCRootViewController.h */,
 				74172C7C16E22FA6003D7E3A /* XCRootViewController.m */,
 				74172C8216E2395B003D7E3A /* LoginViewController.h */,
 				74172C8316E2395B003D7E3A /* LoginViewController.m */,
+				7434520716E76C9C00BA5354 /* NavigationViewController.h */,
+				7434520816E76C9C00BA5354 /* NavigationViewController.m */,
+				7453046016E7847E00E14138 /* MapViewController.h */,
+				7453046116E7847E00E14138 /* MapViewController.m */,
 				74172C6216E1FFC2003D7E3A /* Supporting Files */,
 			);
 			path = XieCheng;
@@ -173,85 +138,9 @@
 			children = (
 				749B447516E3A44E00E9C2C5 /* XCContext.h */,
 				749B447616E3A44E00E9C2C5 /* XCContext.m */,
+				7434520E16E7701100BA5354 /* ViewHelper.h */,
 			);
 			path = Logic;
-			sourceTree = "<group>";
-		};
-		B114917B16E5C97600B39674 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B1FAE97B16E5CAB400FC8DD3 /* Headers */,
-				B1FAE99116E5CAB400FC8DD3 /* Library */,
-				B114917C16E5C97600B39674 /* AMap.bundle */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		B1FAE97B16E5CAB400FC8DD3 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				B1FAE97C16E5CAB400FC8DD3 /* MAMapKit */,
-			);
-			path = Headers;
-			sourceTree = "<group>";
-		};
-		B1FAE97C16E5CAB400FC8DD3 /* MAMapKit */ = {
-			isa = PBXGroup;
-			children = (
-				B1FAE97D16E5CAB400FC8DD3 /* MAAnnotation.h */,
-				B1FAE97E16E5CAB400FC8DD3 /* MAAnnotationView.h */,
-				B1FAE97F16E5CAB400FC8DD3 /* MACircle.h */,
-				B1FAE98016E5CAB400FC8DD3 /* MACircleView.h */,
-				B1FAE98116E5CAB400FC8DD3 /* MAGeometry.h */,
-				B1FAE98216E5CAB400FC8DD3 /* MAMapKit.h */,
-				B1FAE98316E5CAB400FC8DD3 /* MAMapView.h */,
-				B1FAE98416E5CAB400FC8DD3 /* MAMultiPoint.h */,
-				B1FAE98516E5CAB400FC8DD3 /* MAOverlay.h */,
-				B1FAE98616E5CAB400FC8DD3 /* MAOverlayPathView.h */,
-				B1FAE98716E5CAB400FC8DD3 /* MAOverlayView.h */,
-				B1FAE98816E5CAB400FC8DD3 /* MAPinAnnotationView.h */,
-				B1FAE98916E5CAB400FC8DD3 /* MAPointAnnotation.h */,
-				B1FAE98A16E5CAB400FC8DD3 /* MAPolygon.h */,
-				B1FAE98B16E5CAB400FC8DD3 /* MAPolygonView.h */,
-				B1FAE98C16E5CAB400FC8DD3 /* MAPolyline.h */,
-				B1FAE98D16E5CAB400FC8DD3 /* MAPolylineView.h */,
-				B1FAE98E16E5CAB400FC8DD3 /* MAShape.h */,
-				B1FAE98F16E5CAB400FC8DD3 /* MATypes.h */,
-				B1FAE99016E5CAB400FC8DD3 /* MAUserLocation.h */,
-			);
-			path = MAMapKit;
-			sourceTree = "<group>";
-		};
-		B1FAE99116E5CAB400FC8DD3 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				B1FAE99216E5CAB400FC8DD3 /* MAMapKit */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
-		B1FAE99216E5CAB400FC8DD3 /* MAMapKit */ = {
-			isa = PBXGroup;
-			children = (
-				B1FAE99716E5CC8200FC8DD3 /* Debug-iphonesimulator */,
-				B1FAE99316E5CAB400FC8DD3 /* Release-iphoneos */,
-			);
-			path = MAMapKit;
-			sourceTree = "<group>";
-		};
-		B1FAE99316E5CAB400FC8DD3 /* Release-iphoneos */ = {
-			isa = PBXGroup;
-			children = (
-				B1FAE99416E5CAB400FC8DD3 /* libMAMapKit.a */,
-			);
-			path = "Release-iphoneos";
-			sourceTree = "<group>";
-		};
-		B1FAE99716E5CC8200FC8DD3 /* Debug-iphonesimulator */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Debug-iphonesimulator";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,7 +198,6 @@
 				74172C6E16E1FFC2003D7E3A /* Default.png in Resources */,
 				74172C7016E1FFC2003D7E3A /* Default@2x.png in Resources */,
 				74172C7216E1FFC2003D7E3A /* Default-568h@2x.png in Resources */,
-				B114917D16E5C97600B39674 /* AMap.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,11 +209,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				74172C6816E1FFC2003D7E3A /* main.m in Sources */,
-				74172C6C16E1FFC2003D7E3A /* XCAppDelegate.mm in Sources */,
+				74172C6C16E1FFC2003D7E3A /* XCAppDelegate.m in Sources */,
 				74172C7A16E22F3F003D7E3A /* XCBaseViewController.m in Sources */,
 				74172C7D16E22FA6003D7E3A /* XCRootViewController.m in Sources */,
 				74172C8416E2395B003D7E3A /* LoginViewController.m in Sources */,
 				749B447716E3A44E00E9C2C5 /* XCContext.m in Sources */,
+				7434520916E76C9C00BA5354 /* NavigationViewController.m in Sources */,
+				7453046216E7847E00E14138 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,20 +288,8 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XieCheng/XieCheng-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/XieCheng/Resources/Library/MAMapKit\"";
 				INFOPLIST_FILE = "XieCheng/XieCheng-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/Resources/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
-					"\"$(SRCROOT)/XieCheng/Resources/Library/MAMapKit/Release-iphoneos\"",
-				);
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-IMAMapkit",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -421,20 +299,8 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "XieCheng/XieCheng-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/XieCheng/Resources/Library/MAMapKit\"";
 				INFOPLIST_FILE = "XieCheng/XieCheng-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(SRCROOT)/Resources/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)",
-					"\"$(SRCROOT)/XieCheng/Resources/Library/MAMapKit/Release-iphoneos\"",
-				);
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-IMAMapkit",
-				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = 1;
-				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

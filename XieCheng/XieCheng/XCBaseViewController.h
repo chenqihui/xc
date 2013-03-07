@@ -12,8 +12,4 @@
 
 - (id)initWithFrame:(CGRect)frame;
 
-+(UIInterfaceOrientation)GetCurrentOrientation;
-
-+(void)SetCurrentOrientation:(UIInterfaceOrientation)orientation;
-
 @end

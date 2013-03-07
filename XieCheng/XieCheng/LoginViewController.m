@@ -18,124 +18,116 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.view setBackgroundColor:[UIColor redColor]];
-    UIButton* get_btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    get_btn.frame =  CGRectMake(0, 0, 60, 29);
-//    get_btn.center = self.view.center;
-    [get_btn setTitle:@"getAction" forState:UIControlStateNormal];
-    [self.view addSubview:get_btn];
+    UITableView *table = [[[UITableView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.height, self.view.frame.size.width) style:UITableViewStyleGrouped] autorelease];
+    table.delegate = self;
+    table.dataSource = self;
+    table.backgroundView = nil;
+//    [table setScrollEnabled:NO];
+    
+//    [self.view addSubview:table];
+    
+    [self.view setBackgroundColor:[UIColor blueColor]];
 }
 
-//- (NSUInteger) supportedInterfaceOrientations
-//{
-//    //Because your app is only landscape, your view controller for the view in your
-//    // popover needs to support only landscape
-//    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
-//}
 
-//-(NSUInteger)supportedInterfaceOrientations
-//{
-//    return UIInterfaceOrientationMaskLandscape;
-//}
-
--(BOOL)shouldAutorotate
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return YES;
+    if(section == 1)
+        return 2;
+    return 1;
 }
-- (NSUInteger)supportedInterfaceOrientations
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return ((1 << UIInterfaceOrientationPortrait) | (1 << UIInterfaceOrientationLandscapeLeft) | (1 << UIInterfaceOrientationLandscapeRight));
+    UITableViewCell *cell = nil;
+    cell = [tableView dequeueReusableCellWithIdentifier:@"applistcell"];
+    if (indexPath.section == 2)
+    {
+        if(cell==nil)
+        {
+            cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellSelectionStyleNone reuseIdentifier:@"applistcell"]autorelease];
+            cell.selectionStyle=UITableViewCellSelectionStyleNone;
+            cell.backgroundView=[[[UIView alloc]initWithFrame:CGRectMake(0,0,0,0)]autorelease];
+            UIButton* btn=[UIButton buttonWithType:UIButtonTypeRoundedRect];
+            btn.frame=CGRectMake(0,0,self.view.frame.size.width - 20,44);
+            [btn setTitle:@"登录" forState:UIControlStateNormal];
+            btn.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            [btn setBackgroundImage:[[UIImage imageNamed:@"btn_smsok.png"] stretchableImageWithLeftCapWidth:10 topCapHeight:0] forState:UIControlStateNormal];
+            [btn addTarget:self action:@selector(login:) forControlEvents:UIControlEventTouchUpInside];
+            
+//            m_indicatorView = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+//            m_indicatorView.frame = CGRectMake(260,0,20,44);
+//            [btn addSubview:m_indicatorView];
+//            m_indicatorView.hidden = YES;
+            
+            [cell.contentView addSubview:btn];
+        }
+        return cell;
+    }
+    if(cell==nil)
+    {
+        cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellSelectionStyleNone reuseIdentifier:@"applistcell"]autorelease];
+        
+        UILabel *label = [[[UILabel alloc]initWithFrame:CGRectMake(15, 0, 255, 44)] autorelease];
+        label.backgroundColor = [UIColor clearColor];
+        label.tag = 500;
+        UIFont *font = [UIFont systemFontOfSize:20];
+        label.font = font;
+        [cell.contentView addSubview:label];
+        
+        UITextField *myTextField = [[UITextField alloc] initWithFrame:CGRectMake(160, 10, 120, 44)];
+        myTextField.placeholder = @"请输入";
+        //        myTextField.font = [UIFont systemFontOfSize:16.0f];
+        myTextField.textAlignment = 2;
+        myTextField.returnKeyType = UIReturnKeyDone;
+        myTextField.delegate = self;
+        [cell.contentView  addSubview:myTextField];
+        
+    }
+    UILabel *label = (UILabel *)[cell.contentView viewWithTag:500];
+    if(indexPath.section==0)
+    {
+        label.text = [NSString stringWithFormat:@"企业ID"];
+    }
+    else if(indexPath.section==1)
+    {
+        if(indexPath.row==0)
+        {
+            label.text = @"帐号";
+        }
+        else if(indexPath.row==1)
+        {
+            label.text = @"密码";
+        }
+    }
+    //设置行的样式：此为无，默认是点击变蓝
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (UIInterfaceOrientationPortraitUpsideDown != toInterfaceOrientation)
-    {
-        return YES;
-    }
-    return NO;
+    return 3;
 }
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-//    // Return YES for supported orientations
-//    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-//}
-//
-//- (void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:animated];
-//    [UIView animateWithDuration:0.0f
-//                     animations:^{
-//                         [self.view setTransform: CGAffineTransformMakeRotation(M_PI / 2)];
-//                         //                         if (iPhone5) {
-//                         //                             self.view.frame = CGRectMake(0, 0, 568, 320);
-//                         //                         }
-//                         //                         else{
-//                         //                             self.view.frame = CGRectMake(0, 0, 480, 320);
-//                         //                         }
-//                     }];
-//}
 
-#pragma mark -
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(toInterfaceOrientation == UIInterfaceOrientationPortrait)
-    {
-        self.view.transform = CGAffineTransformIdentity;
-        self.view.transform = CGAffineTransformMakeRotation(0.0);
-        self.view.bounds = CGRectMake(0, 0, 748, 1004);
-    }
-    else if(toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
-    {
-        self.view.transform = CGAffineTransformIdentity;
-        self.view.transform = CGAffineTransformMakeRotation(M_PI_4);
-        self.view.bounds = CGRectMake(0, 0, 568, 320);
-    }
-    else if(toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
-    {
-        self.view.transform = CGAffineTransformIdentity;
-        self.view.transform = CGAffineTransformMakeRotation(M_PI_2);
-        self.view.bounds = CGRectMake(0, 0, 748, 1004);
-    }
-    else if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft)
-    {
-        self.view.transform = CGAffineTransformIdentity;
-        self.view.transform = CGAffineTransformMakeRotation(-M_PI_4);
-        self.view.bounds = CGRectMake(0, 0, 568, 320);
-    }
+    return 44;
 }
 
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    if(toInterfaceOrientation == UIInterfaceOrientationPortrait)
-    {
-        self.view.transform = CGAffineTransformIdentity;
-        self.view.transform = CGAffineTransformMakeRotation(0.0);
-        self.view.bounds = CGRectMake(0, 0, 748, 1004);
+    if (section == 2) {
+        return 50;
     }
-    else if(toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
-    {
-        self.view.transform = CGAffineTransformIdentity;
-        self.view.transform = CGAffineTransformMakeRotation(M_PI_4);
-        self.view.bounds = CGRectMake(0, 0, 568, 320);
-    }
-    else if(toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
-    {
-        self.view.transform = CGAffineTransformIdentity;
-        self.view.transform = CGAffineTransformMakeRotation(M_PI_2);
-        self.view.bounds = CGRectMake(0, 0, 748, 1004);
-    }
-    else if(toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft)
-    {
-        self.view.transform = CGAffineTransformIdentity;
-        self.view.transform = CGAffineTransformMakeRotation(-M_PI_4);
-        self.view.bounds = CGRectMake(0, 0, 568, 320);
-    }
+    return 12;
 }
 
-//-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-//{
-//    return UIInterfaceOrientationIsLandscape(toInterfaceOrientation);
-//}
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	[textField resignFirstResponder];
+	return YES;
+}
 
 @end
