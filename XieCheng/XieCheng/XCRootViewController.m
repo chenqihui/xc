@@ -15,7 +15,6 @@
 
 @implementation XCRootViewController
 
-@synthesize mainView;
 @synthesize shadeView;
 
 - (void)viewDidLoad
@@ -24,8 +23,7 @@
 	// Do any additional setup after loading the view.
     [self.view setBackgroundColor:[UIColor grayColor]];
     
-    mainView = [[UIView alloc] initWithFrame:[XCContext GetContext].m_rect];
-    mainView.backgroundColor = [UIColor whiteColor];
+    m_mainViewController = [[MainViewController alloc] initWithFrame:[XCContext GetContext].m_rect];
     
     shadeView = [[UIView alloc] initWithFrame:[XCContext GetContext].m_rect];
     shadeView.backgroundColor = [UIColor blackColor];
@@ -37,18 +35,18 @@
     m_mapViewController = [[MapViewController alloc] initWithFrame:CGRectMake([XCContext GetContext].m_rect.size.width * 1.618, 0, [XCContext GetContext].m_rect.size.width * 0.618, [XCContext GetContext].m_rect.size.height)];
     
     [self orientationChanged];
-    [self.view addSubview:mainView];
+    [self.view addSubview:m_mainViewController.view];
     [self.view addSubview:shadeView];
     [self.view addSubview:m_naviViewController.view];
     [self.view addSubview:m_mapViewController.view];
     
     UISwipeGestureRecognizer *leftFingerSwipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showNaviView:)];
     [leftFingerSwipeUp setDirection:UISwipeGestureRecognizerDirectionRight];
-    [mainView addGestureRecognizer:leftFingerSwipeUp];
+    [m_mainViewController.view addGestureRecognizer:leftFingerSwipeUp];
     
     UISwipeGestureRecognizer *rightFingerSwipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showMapView:)];
     [rightFingerSwipeUp setDirection:UISwipeGestureRecognizerDirectionLeft];
-    [mainView addGestureRecognizer:rightFingerSwipeUp];
+    [m_mainViewController.view addGestureRecognizer:rightFingerSwipeUp];
     
     UITapGestureRecognizer *enterFingerSwipeUp = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(undoAction:)];
     [enterFingerSwipeUp setNumberOfTapsRequired:1];
@@ -83,7 +81,7 @@
     [UIView animateWithDuration:0.3 animations:^{
         m_naviViewController.view.frame = CGRectMake(0, 0, m_naviViewController.view.frame.size.width , m_naviViewController.view.frame.size.height);
         
-        CALayer *layer = mainView.layer;
+        CALayer *layer = m_mainViewController.view.layer;
         layer.zPosition = -4000;
         CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
         rotationAndPerspectiveTransform.m34 = 1.0 / m_angle;
@@ -92,7 +90,7 @@
         shadeView.alpha = 0.35;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.3 animations:^{
-            mainView.transform = CGAffineTransformMakeScale(0.9, 0.9);
+            m_mainViewController.view.transform = CGAffineTransformMakeScale(0.9, 0.9);
             
             shadeView.alpha = 0.5;
         }];
@@ -105,7 +103,7 @@
     [UIView animateWithDuration:0.3 animations:^{
         m_mapViewController.view.frame = CGRectMake([XCContext GetContext].m_rect.size.width * (1 - 0.618), 0, m_mapViewController.view.frame.size.width, m_mapViewController.view.frame.size.height);
         
-        CALayer *layer = mainView.layer;
+        CALayer *layer = m_mainViewController.view.layer;
         layer.zPosition = -4000;
         CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
         rotationAndPerspectiveTransform.m34 = 1.0 / m_angle;
@@ -114,7 +112,7 @@
         shadeView.alpha = 0.35;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.3 animations:^{
-            mainView.transform = CGAffineTransformMakeScale(0.9, 0.9);
+            m_mainViewController.view.transform = CGAffineTransformMakeScale(0.9, 0.9);
             
             shadeView.alpha = 0.5;
         }];
@@ -123,10 +121,10 @@
 
 - (IBAction)undoAction:(id)sender
 {
-    mainView.userInteractionEnabled=YES;
+    m_mainViewController.view.userInteractionEnabled=YES;
     
     [UIView animateWithDuration:0.3 animations:^{
-        CALayer *layer = mainView.layer;
+        CALayer *layer = m_mainViewController.view.layer;
         layer.zPosition = -4000;
         CATransform3D rotationAndPerspectiveTransform = CATransform3DIdentity;
         rotationAndPerspectiveTransform.m34 = 1.0 / -m_angle;
@@ -135,7 +133,7 @@
         shadeView.alpha = 0.35;
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:0.3 animations:^{
-            mainView.transform = CGAffineTransformMakeScale(1.0, 1.0);
+            m_mainViewController.view.transform = CGAffineTransformMakeScale(1.0, 1.0);
             
             shadeView.alpha = 0.0;
             if (m_angle < 0)
@@ -148,33 +146,14 @@
 
 - (void)SwitchView:(int)viewID
 {
-    switch (viewID) {
-        case UIButtonForUser:
-            
-            break;
-        case UIButtonForFlightInChina:
-            
-            break;
-        case UIButtonForFlightInInternational:
-            
-            break;
-        case UIButtonForShopping:
-            
-            break;
-        case UIButtonForUserSet:
-            
-            break;
-            
-        default:
-            break;
-    }
+    [m_mainViewController SwitchView:viewID];
 }
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UNDOACTION object:nil];
     
-    [mainView release];
+    [m_mainViewController release];
     [shadeView release];
     [m_naviViewController release];
     [m_mapViewController release];

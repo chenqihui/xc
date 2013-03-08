@@ -24,7 +24,7 @@
     table.backgroundView = nil;
 //    [table setScrollEnabled:NO];
     
-//    [self.view addSubview:table];
+    [self.view addSubview:table];
     
     [self.view setBackgroundColor:[UIColor blueColor]];
 }

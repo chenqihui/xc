@@ -31,12 +31,12 @@
                 if(i == 0)
                 {
                     button = [[[NaviButton alloc] initWithFrame:CGRectMake(10, [XCContext GetContext].m_rect.size.height/2 + 5, lengthBtn * 2 + 10, lengthBtn) Color:[UIColor greenColor]] autorelease];
-                    button.tag = 3;
+                    button.tag = 4;
                 }
             }else
             {
                 button = [[[NaviButton alloc] initWithFrame:CGRectMake(10 * (i + 1) + lengthBtn * i, [XCContext GetContext].m_rect.size.height/2 + 5 * j - lengthBtn * (j == -1?1:0), lengthBtn, lengthBtn)] autorelease];
-                button.tag = i + j + 1;
+                button.tag = i + j + 2;
                 [button setBackgroundColor:[UIColor orangeColor]];
             }
             button.m_NaviButtonDelegate = self;
@@ -57,6 +57,7 @@
     NaviButton* navi = (NaviButton*)sender;
     [[self SuperViewController] SwitchView:navi.tag];
 //    等同于[(XCBaseViewController*)self.view.superview.nextResponder Switch:navi.tag];
+    [self undoAction];
 }
 
 @end

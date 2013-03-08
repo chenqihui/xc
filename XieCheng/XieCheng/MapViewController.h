@@ -7,7 +7,12 @@
 //
 
 #import "XCBaseViewController.h"
+#import "MAMapKit.h"
 
-@interface MapViewController : XCBaseViewController
+@interface MapViewController : XCBaseViewController<MAMapViewDelegate>
+{
+    MAMapView *myMapView;
+	MAPointAnnotation *pa;
+}
 
 @end

@@ -11,7 +11,7 @@
 
 typedef enum {
     //以下是枚举成员 TestA = 0,
-    UIButtonForUser = 0,
+    UIButtonForUser = 1,
     UIButtonForFlightInChina,
     UIButtonForFlightInInternational,
     UIButtonForShopping,
