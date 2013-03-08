@@ -28,8 +28,28 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        [self commonInit];
         [self setBackgroundColor:color];
+        [self commonInit];
+    }
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame Parem:(NSMutableDictionary*)dic
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+        if ([dic count] > 0)
+        {
+            NSMutableDictionary* data = [dic retain];
+            if([data objectForKey:TITLE] != nil)
+                [self setTitle:[data objectForKey:TITLE] forState:UIControlStateNormal];
+            if([data objectForKey:COLOR] != nil)
+                [self setBackgroundColor:[data objectForKey:COLOR]];
+            [data release];
+        }
+        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self commonInit];
     }
     return self;
 }
