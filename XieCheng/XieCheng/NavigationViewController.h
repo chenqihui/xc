@@ -7,7 +7,17 @@
 //
 
 #import "XCBaseViewController.h"
+#import "NaviButton.h"
 
-@interface NavigationViewController : XCBaseViewController
+typedef enum {
+    //以下是枚举成员 TestA = 0,
+    UIButtonForUser = 0,
+    UIButtonForFlightInChina,
+    UIButtonForFlightInInternational,
+    UIButtonForShopping,
+    UIButtonForUserSet
+}UIButtonForAction;//枚举名称
+
+@interface NavigationViewController : XCBaseViewController<NaviButtonDelegate>
 
 @end

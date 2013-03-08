@@ -30,4 +30,16 @@
 	// Do any additional setup after loading the view.
 }
 
+- (void)SwitchView:(int)viewID
+{
+}
+
+-(XCBaseViewController*)SuperViewController
+{
+	id nextresponder=[self.view.superview nextResponder];
+	if(FALSE==[nextresponder isKindOfClass:[UIViewController class]])
+		nextresponder=nil;
+	return (XCBaseViewController*)nextresponder;
+}
+
 @end

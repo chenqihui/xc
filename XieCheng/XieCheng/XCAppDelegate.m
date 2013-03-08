@@ -27,7 +27,7 @@
     [self.window makeKeyAndVisible];
     
     [XCContext GetContext].m_rect = CGRectMake(0, 0, self.window.frame.size.height, self.window.frame.size.width - 20);
-    XCRootViewController* xcRootViewController = [[XCRootViewController alloc] initWithFrame:CGRectMake(0, 0, 568, 300)];
+    XCRootViewController* xcRootViewController = [[XCRootViewController alloc] initWithFrame:[XCContext GetContext].m_rect];
     self.window.rootViewController = xcRootViewController;
     
     return YES;

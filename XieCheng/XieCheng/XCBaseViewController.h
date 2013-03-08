@@ -12,4 +12,8 @@
 
 - (id)initWithFrame:(CGRect)frame;
 
+- (void)SwitchView:(int)viewID;
+
+-(XCBaseViewController*)SuperViewController;
+
 @end

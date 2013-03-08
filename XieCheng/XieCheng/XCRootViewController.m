@@ -32,9 +32,9 @@
     shadeView.userInteractionEnabled = YES;
     shadeView.alpha = 0;
 
-    m_naviViewController = [[NavigationViewController alloc] initWithFrame:CGRectMake(-568 * 0.618, 0, 568 * 0.618, 300)];
+    m_naviViewController = [[NavigationViewController alloc] initWithFrame:CGRectMake(-[XCContext GetContext].m_rect.size.width * 0.618, 0, [XCContext GetContext].m_rect.size.width * 0.618, [XCContext GetContext].m_rect.size.height)];
     
-    m_mapViewController = [[MapViewController alloc] initWithFrame:CGRectMake(568 * 1.618, 0, 568 * 0.618, 300)];
+    m_mapViewController = [[MapViewController alloc] initWithFrame:CGRectMake([XCContext GetContext].m_rect.size.width * 1.618, 0, [XCContext GetContext].m_rect.size.width * 0.618, [XCContext GetContext].m_rect.size.height)];
     
     [self orientationChanged];
     [self.view addSubview:mainView];
@@ -62,20 +62,20 @@
     
 }
 
-//-(BOOL)shouldAutorotate
-//{
-//    return YES;
-//}
-//
-//-(NSUInteger)supportedInterfaceOrientations
-//{
-//    return UIInterfaceOrientationMaskLandscape;
-//}
-//
-//-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-//{
-//    return YES;
-//}
+-(BOOL)shouldAutorotate
+{
+    return YES;
+}
+
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskLandscape;
+}
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    return YES;
+}
 
 - (IBAction)showNaviView:(id)sender
 { 
@@ -146,9 +146,28 @@
     }];
 }
 
-- (void)Switch:(int)viewID
+- (void)SwitchView:(int)viewID
 {
-    
+    switch (viewID) {
+        case UIButtonForUser:
+            
+            break;
+        case UIButtonForFlightInChina:
+            
+            break;
+        case UIButtonForFlightInInternational:
+            
+            break;
+        case UIButtonForShopping:
+            
+            break;
+        case UIButtonForUserSet:
+            
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)dealloc
@@ -205,5 +224,12 @@
     self.view.frame = (CGRect){ { f.origin.x, f.origin.y },self.view.frame.size};
     [UIView commitAnimations];
 }
+
+//- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+//{
+//    m_naviViewController = [[NavigationViewController alloc] initWithFrame:CGRectMake(-[XCContext GetContext].m_rect.size.width * 0.618, 0, [XCContext GetContext].m_rect.size.width * 0.618, [XCContext GetContext].m_rect.size.height)];
+//    
+//    m_mapViewController = [[MapViewController alloc] initWithFrame:CGRectMake([XCContext GetContext].m_rect.size.width * 1.618, 0, [XCContext GetContext].m_rect.size.width * 0.618, [XCContext GetContext].m_rect.size.height)];
+//}
 
 @end
