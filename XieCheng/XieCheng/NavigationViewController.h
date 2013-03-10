@@ -18,6 +18,6 @@ typedef enum {
     UIButtonForUserSet
 }UIButtonForAction;//枚举名称
 
-@interface NavigationViewController : XCBaseViewController<NaviButtonDelegate>
+@interface NavigationViewController : XCBaseViewController<NaviButtonDelegate, NaviButtonDataSource>
 
 @end

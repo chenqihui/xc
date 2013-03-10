@@ -8,6 +8,11 @@
 
 #import "XCBaseViewController.h"
 
+#import "XCDataManager.h"
+
 @interface ShoppingViewController : XCBaseViewController
+{
+    XCDataManager *xcdata;
+}
 
 @end

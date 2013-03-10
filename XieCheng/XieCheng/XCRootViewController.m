@@ -32,13 +32,13 @@
 
     m_naviViewController = [[NavigationViewController alloc] initWithFrame:CGRectMake(-[XCContext GetContext].m_rect.size.width * 0.618, 0, [XCContext GetContext].m_rect.size.width * 0.618, [XCContext GetContext].m_rect.size.height)];
     
-    m_mapViewController = [[MapViewController alloc] initWithFrame:CGRectMake([XCContext GetContext].m_rect.size.width * 1.618, 0, [XCContext GetContext].m_rect.size.width * 0.618, [XCContext GetContext].m_rect.size.height)];
+//    m_mapViewController = [[MapViewController alloc] initWithFrame:CGRectMake([XCContext GetContext].m_rect.size.width * 1.618, 0, [XCContext GetContext].m_rect.size.width * 0.618, [XCContext GetContext].m_rect.size.height)];
     
     [self orientationChanged];
     [self.view addSubview:m_mainViewController.view];
     [self.view addSubview:shadeView];
     [self.view addSubview:m_naviViewController.view];
-    [self.view addSubview:m_mapViewController.view];
+//    [self.view addSubview:m_mapViewController.view];
     
     UISwipeGestureRecognizer *leftFingerSwipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showNaviView:)];
     [leftFingerSwipeUp setDirection:UISwipeGestureRecognizerDirectionRight];

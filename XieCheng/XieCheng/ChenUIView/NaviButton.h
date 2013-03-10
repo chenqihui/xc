@@ -11,22 +11,34 @@
 #define TITLE @"title"
 #define COLOR @"color"
 
+@class NaviButton;
+@protocol NaviButtonDataSource;
+
 @protocol NaviButtonDelegate <NSObject>
 
 @optional
--(void)touchBtn:(id)sender;
+
+- (void)touchBtn:(NaviButton *)naviButton;
 
 @end
 
 @interface NaviButton : UIButton<NSCoding>
 {
-    id<NaviButtonDelegate> m_NaviButtonDelegate;
+    id<NaviButtonDelegate>   m_NaviButtonDelegate;
+    id<NaviButtonDataSource> m_NaviButtonDataSource;
 }
 
-@property(nonatomic,assign) id<NaviButtonDelegate> m_NaviButtonDelegate;
+@property(nonatomic,assign)   id <NaviButtonDelegate>   m_NaviButtonDelegate;
+@property(nonatomic,assign)   id <NaviButtonDataSource> m_NaviButtonDataSource;
 
-- (id)initWithFrame:(CGRect)frame Color:(UIColor*)color;
-
-- (id)initWithFrame:(CGRect)frame Parem:(NSMutableDictionary*)dic;
+- (id)initWithFrame:(CGRect)frame IndexOfTag:(NSInteger)indexOfTag;
 
 @end
+
+@protocol NaviButtonDataSource <NSObject>
+
+@optional
+
+- (NaviButton *)buttonData:(NaviButton *)naviButton;
+
+@end 

@@ -20,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [XCContext InitContext];
+    [self initData];
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
@@ -58,6 +59,21 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)initData
+{
+    NSString *strpath = [NSString stringWithFormat:@"%@/database",[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"]];
+    [XCContext GetContext].m_dbpath = [strpath retain];
+    //复制数据
+    if(![[NSFileManager defaultManager] fileExistsAtPath:strpath])
+    {
+        [[NSFileManager defaultManager] createDirectoryAtPath:strpath withIntermediateDirectories:NO attributes:nil error:nil];
+        
+        NSString* path=[[NSBundle mainBundle] pathForResource:@"xiecheng" ofType:@"rdb"];
+		NSString* ppath=[strpath stringByAppendingPathComponent:[path lastPathComponent]];
+		[[NSFileManager defaultManager] copyItemAtPath:path toPath:ppath error:nil];
+    }
 }
 
 @end

@@ -12,50 +12,28 @@
 @implementation NaviButton
 
 @synthesize m_NaviButtonDelegate;
+@synthesize m_NaviButtonDataSource;
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame IndexOfTag:(NSInteger)indexOfTag
 {
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.tag = indexOfTag;
         [self commonInit];
     }
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame Color:(UIColor*)color
+- (void)setM_NaviButtonDataSource:(id<NaviButtonDataSource>)naviButtonDataSource
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        [self setBackgroundColor:color];
-        [self commonInit];
-    }
-    return self;
+    m_NaviButtonDataSource = naviButtonDataSource;
+    if ([m_NaviButtonDataSource respondsToSelector:@selector(buttonData:)] == YES)
+        [m_NaviButtonDataSource buttonData:self];
 }
 
-- (id)initWithFrame:(CGRect)frame Parem:(NSMutableDictionary*)dic
+-(void) commonInit
 {
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-        if ([dic count] > 0)
-        {
-            NSMutableDictionary* data = [dic retain];
-            if([data objectForKey:TITLE] != nil)
-                [self setTitle:[data objectForKey:TITLE] forState:UIControlStateNormal];
-            if([data objectForKey:COLOR] != nil)
-                [self setBackgroundColor:[data objectForKey:COLOR]];
-            [data release];
-        }
-        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [self commonInit];
-    }
-    return self;
-}
-
--(void) commonInit {
-    
     //enable the shadow
     [self enableShadow];
     
@@ -63,7 +41,8 @@
     [self addTarget:self action:@selector(touchUp:) forControlEvents:UIControlEventTouchUpInside | UIControlEventTouchUpOutside];
 }
 
--(void) enableShadow {
+-(void) enableShadow
+{
     //shadow part
     self.layer.shadowColor = [UIColor blackColor].CGColor;
     self.layer.shadowOffset = CGSizeMake(0, 5);
@@ -78,21 +57,24 @@
     [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 }
 
--(void) disableShadow {
+-(void) disableShadow
+{
     self.layer.shadowColor = [UIColor clearColor].CGColor;
     [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 }
 
 -(void) touchUp: (UIButton*) sender
 {
-    [UIView animateWithDuration:0.01 animations:^{
+    [UIView animateWithDuration:0.01 animations:^
+    {
         sender.layer.zPosition = 10000;
         CATransform3D transform = CATransform3DMakeRotation(0, 1, 0, 0);
         transform.m34 = 1.0 / -500;
         sender.layer.transform = transform;
         sender.transform = CGAffineTransformMakeScale(1, 1);
         [((NaviButton*)sender) enableShadow];
-    } completion:^(BOOL finished) {
+    } completion:^(BOOL finished)
+    {
         sender.transform = CGAffineTransformMakeScale(1, 1);
         sender.layer.zPosition = 0;
     }];
@@ -103,14 +85,16 @@
 
 -(void) touchDown: (UIButton*) sender forEvent:(UIEvent*)event
 {
-    [UIView animateWithDuration:0.01 animations:^{
+    [UIView animateWithDuration:0.01 animations:^
+    {
         sender.layer.zPosition = 10000;
         CATransform3D transform = CATransform3DMakeRotation(0, 1, 0, 0);
         transform.m34 = 1.0 / -500;
         sender.layer.transform = transform;
         sender.transform = CGAffineTransformMakeScale(0.7, 0.7);
         [((NaviButton*)sender) disableShadow];
-    } completion:^(BOOL finished) {
+    } completion:^(BOOL finished)
+    {
         sender.transform = CGAffineTransformMakeScale(0.7, 0.7);
         sender.layer.zPosition = 0;
     }];
@@ -119,6 +103,7 @@
 - (void)dealloc
 {
     [m_NaviButtonDelegate release];
+    [m_NaviButtonDataSource release];
     [super dealloc];
 }
 

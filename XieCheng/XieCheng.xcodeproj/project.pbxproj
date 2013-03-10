@@ -19,8 +19,12 @@
 		74172C7A16E22F3F003D7E3A /* XCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74172C7916E22F3E003D7E3A /* XCBaseViewController.m */; };
 		74172C7D16E22FA6003D7E3A /* XCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74172C7C16E22FA6003D7E3A /* XCRootViewController.m */; };
 		74172C8416E2395B003D7E3A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74172C8316E2395B003D7E3A /* LoginViewController.m */; };
+		7444B3C416EB2EAF004D6BDC /* SOAPServiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7444B3C316EB2EAF004D6BDC /* SOAPServiceViewController.m */; };
 		7453046216E7847E00E14138 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7453046116E7847E00E14138 /* MapViewController.m */; };
 		749B447716E3A44E00E9C2C5 /* XCContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 749B447616E3A44E00E9C2C5 /* XCContext.m */; };
+		74DB0E0A16EC953100F2F38E /* xiecheng.rdb in Resources */ = {isa = PBXBuildFile; fileRef = 74DB0E0916EC953100F2F38E /* xiecheng.rdb */; };
+		74DB0E0D16EC986400F2F38E /* XCDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DB0E0C16EC986400F2F38E /* XCDataManager.m */; };
+		74DB0E2416ECD48400F2F38E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DB0E2316ECD48400F2F38E /* libsqlite3.0.dylib */; };
 		B1ABB8A816E9B232005CC730 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1ABB8A716E9B231005CC730 /* QuartzCore.framework */; };
 		B1ABB8AC16E9B30A005CC730 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1ABB8AA16E9B2FD005CC730 /* NavigationViewController.m */; };
 		B1ABB8B016E9B3AB005CC730 /* NaviButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B1ABB8AF16E9B3AB005CC730 /* NaviButton.m */; };
@@ -59,10 +63,16 @@
 		74172C8216E2395B003D7E3A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		74172C8316E2395B003D7E3A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7434520E16E7701100BA5354 /* ViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewHelper.h; sourceTree = "<group>"; };
+		7444B3C216EB2EAF004D6BDC /* SOAPServiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOAPServiceViewController.h; sourceTree = "<group>"; };
+		7444B3C316EB2EAF004D6BDC /* SOAPServiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SOAPServiceViewController.m; sourceTree = "<group>"; };
 		7453046016E7847E00E14138 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		7453046116E7847E00E14138 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		749B447516E3A44E00E9C2C5 /* XCContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCContext.h; sourceTree = "<group>"; };
 		749B447616E3A44E00E9C2C5 /* XCContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCContext.m; sourceTree = "<group>"; };
+		74DB0E0916EC953100F2F38E /* xiecheng.rdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = xiecheng.rdb; sourceTree = "<group>"; };
+		74DB0E0B16EC986400F2F38E /* XCDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDataManager.h; sourceTree = "<group>"; };
+		74DB0E0C16EC986400F2F38E /* XCDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDataManager.m; sourceTree = "<group>"; };
+		74DB0E2316ECD48400F2F38E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		B1ABB8A716E9B231005CC730 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B1ABB8A916E9B2FD005CC730 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationViewController.h; path = XieCheng/NavigationViewController.h; sourceTree = SOURCE_ROOT; };
 		B1ABB8AA16E9B2FD005CC730 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationViewController.m; path = XieCheng/NavigationViewController.m; sourceTree = SOURCE_ROOT; };
@@ -112,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74DB0E2416ECD48400F2F38E /* libsqlite3.0.dylib in Frameworks */,
 				B1ABB8C416E9C2FF005CC730 /* libstdc++.6.0.9.dylib in Frameworks */,
 				B1ABB8C316E9C2F8005CC730 /* libz.dylib in Frameworks */,
 				B1ABB8C216E9C2F2005CC730 /* SystemConfiguration.framework in Frameworks */,
@@ -131,6 +142,7 @@
 		74172C4C16E1FFC2003D7E3A = {
 			isa = PBXGroup;
 			children = (
+				74DB0E2316ECD48400F2F38E /* libsqlite3.0.dylib */,
 				74172C6116E1FFC2003D7E3A /* XieCheng */,
 				74172C5A16E1FFC2003D7E3A /* Frameworks */,
 				74172C5816E1FFC2003D7E3A /* Products */,
@@ -164,6 +176,8 @@
 		74172C6116E1FFC2003D7E3A /* XieCheng */ = {
 			isa = PBXGroup;
 			children = (
+				74DB0DFA16EC861800F2F38E /* DBservice */,
+				7444B3C016EB2C70004D6BDC /* SOAPService */,
 				B1ABB8B516E9C21B005CC730 /* AmapApi */,
 				B1ABB8AD16E9B3AB005CC730 /* ChenUIView */,
 				749B447416E3A44E00E9C2C5 /* Logic */,
@@ -197,6 +211,7 @@
 		74172C6216E1FFC2003D7E3A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				74DB0E0416EC8A3A00F2F38E /* DB */,
 				74172C6316E1FFC2003D7E3A /* XieCheng-Info.plist */,
 				74172C6416E1FFC2003D7E3A /* InfoPlist.strings */,
 				74172C6716E1FFC2003D7E3A /* main.m */,
@@ -208,6 +223,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		7444B3C016EB2C70004D6BDC /* SOAPService */ = {
+			isa = PBXGroup;
+			children = (
+				7444B3C216EB2EAF004D6BDC /* SOAPServiceViewController.h */,
+				7444B3C316EB2EAF004D6BDC /* SOAPServiceViewController.m */,
+			);
+			path = SOAPService;
+			sourceTree = "<group>";
+		};
 		749B447416E3A44E00E9C2C5 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +240,23 @@
 				7434520E16E7701100BA5354 /* ViewHelper.h */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		74DB0DFA16EC861800F2F38E /* DBservice */ = {
+			isa = PBXGroup;
+			children = (
+				74DB0E0B16EC986400F2F38E /* XCDataManager.h */,
+				74DB0E0C16EC986400F2F38E /* XCDataManager.m */,
+			);
+			path = DBservice;
+			sourceTree = "<group>";
+		};
+		74DB0E0416EC8A3A00F2F38E /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				74DB0E0916EC953100F2F38E /* xiecheng.rdb */,
+			);
+			name = DB;
 			sourceTree = "<group>";
 		};
 		B1ABB8AD16E9B3AB005CC730 /* ChenUIView */ = {
@@ -360,6 +401,7 @@
 				74172C7016E1FFC2003D7E3A /* Default@2x.png in Resources */,
 				74172C7216E1FFC2003D7E3A /* Default-568h@2x.png in Resources */,
 				B1ABB8F716E9CA27005CC730 /* AMap.bundle in Resources */,
+				74DB0E0A16EC953100F2F38E /* xiecheng.rdb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +426,8 @@
 				B1ABB90C16E9E58F005CC730 /* FlightInInternationalViewController.m in Sources */,
 				B1ABB90F16E9E5A8005CC730 /* ShoppingViewController.m in Sources */,
 				B1ABB91216E9E5BC005CC730 /* UserSetViewController.m in Sources */,
+				7444B3C416EB2EAF004D6BDC /* SOAPServiceViewController.m in Sources */,
+				74DB0E0D16EC986400F2F38E /* XCDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

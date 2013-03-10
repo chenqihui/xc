@@ -12,6 +12,7 @@
 
 @synthesize m_window;
 @synthesize m_rect;
+@synthesize m_dbpath;
 
 @end
 

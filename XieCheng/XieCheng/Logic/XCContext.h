@@ -12,10 +12,13 @@
 {
     UIWindow *m_window;
     CGRect m_rect;
+    NSString *m_dbpath;
 }
 
 @property (strong, nonatomic) UIWindow *m_window;
 @property (assign, nonatomic) CGRect m_rect;
+@property (assign, nonatomic) NSString *m_dbpath;
+
 
 @end
 
