@@ -79,12 +79,17 @@
     else{ return;}//打开不成功就返回
 }
 
-- (void)query
+- (void)query:(int)index output:(NSMutableArray **)arlist
 {
+    NSAutoreleasePool *pool = [NSAutoreleasePool new];
 //    char *error;
-    const char *selectSql="select HotelName, ProductId from shopping";
+//    const char *selectSql="select HotelName, ProductId from shopping limit 4";
+    NSString *szSQL = @"select HotelName, ProductId from shopping";
+    if(index>0)
+        szSQL=[NSString stringWithFormat:@"%@ limit %i, 4",szSQL,index];
+    
     sqlite3_stmt *statement;
-    if (sqlite3_prepare_v2(database,selectSql, -1, &statement, nil)==SQLITE_OK) {
+    if (sqlite3_prepare_v2(database, [szSQL UTF8String], -1, &statement, nil)==SQLITE_OK) {
         NSLog(@"select operation is ok.");
     }
     else
@@ -92,12 +97,20 @@
 //        NSLog(@"error: %s",error);
 //        sqlite3_free(error);
     }
+    (*arlist) = [NSMutableArray new];
     while(sqlite3_step(statement)==SQLITE_ROW) {
-        int _id=sqlite3_column_int(statement, 0);
-        NSString *name=[[NSString alloc] initWithFormat:@"%s", (char*)sqlite3_column_text(statement, 1)];
+//        NSString *name=[[NSString alloc] initWithFormat:@"%s", (char*)sqlite3_column_text(statement, 0)];
+        NSString *name = [[NSString alloc] initWithCString:(char*)sqlite3_column_text(statement, 0) encoding:NSUTF8StringEncoding];
+        int _id=sqlite3_column_int(statement, 1);
         NSLog(@"row>>id %i, name %@",_id,name);
+        ShoppingObj *obj = [[ShoppingObj alloc] init];
+        obj.m_HotelName = name;
+        obj.m_ProductId = _id;
+        
+        [(*arlist) addObject:obj];
     }
     sqlite3_finalize(statement);
+    [pool release];
 }
 
 -(void)close

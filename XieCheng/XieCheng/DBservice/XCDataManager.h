@@ -55,7 +55,7 @@
 
 - (void)open;
 
-- (void)query;
+- (void)query:(int)index output:(NSMutableArray **)arlist;
 
 -(void)insert;
 

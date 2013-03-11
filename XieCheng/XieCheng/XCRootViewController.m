@@ -38,7 +38,7 @@
     [self.view addSubview:m_mainViewController.view];
     [self.view addSubview:shadeView];
     [self.view addSubview:m_naviViewController.view];
-//    [self.view addSubview:m_mapViewController.view];
+    [self.view addSubview:m_mapViewController.view];
     
     UISwipeGestureRecognizer *leftFingerSwipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(showNaviView:)];
     [leftFingerSwipeUp setDirection:UISwipeGestureRecognizerDirectionRight];

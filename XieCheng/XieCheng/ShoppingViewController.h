@@ -10,9 +10,17 @@
 
 #import "XCDataManager.h"
 
-@interface ShoppingViewController : XCBaseViewController
+#import "PullRefreshView.h"
+
+@interface ShoppingViewController : XCBaseViewController<UITableViewDelegate, UITableViewDataSource>
 {
     XCDataManager *xcdata;
+    
+    UITableView *shoppinglist;
+    
+    NSArray         *m_arData;
+    
+    PullRefreshView *m_pullRefreshView;
 }
 
 @end
