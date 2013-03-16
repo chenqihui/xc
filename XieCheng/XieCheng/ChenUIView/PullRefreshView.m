@@ -26,11 +26,11 @@
 {
     [self setBackgroundColor:[UIColor clearColor]];
     
-    refreshLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, REFRESH_HEADER_HEIGHT)];
+    refreshLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width/2-160, self.frame.size.height/2-REFRESH_HEADER_HEIGHT/2, 320, REFRESH_HEADER_HEIGHT)];//[XCContext GetContext].m_rect.size.width/2
     refreshLabel.backgroundColor = [UIColor clearColor];
     refreshLabel.font = [UIFont boldSystemFontOfSize:12.0];
     refreshLabel.textAlignment = UITextAlignmentCenter;
-//    refreshLabel.text = @"测试";
+    refreshLabel.text = @"测试";
     
     refreshArrow = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"arrow.png"]];
     refreshArrow.frame = CGRectMake(floorf((REFRESH_HEADER_HEIGHT - 27) / 2),

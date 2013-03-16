@@ -8,6 +8,8 @@
 
 #import "SOAPServiceViewController.h"
 
+#import "MyMD5.h"
+
 @interface SOAPServiceViewController ()<NSXMLParserDelegate,  NSURLConnectionDelegate>//实现两个协议：XML解析、网络连接
 
 @property (strong, nonatomic) NSMutableData *webData;
@@ -29,62 +31,97 @@
 
 - (void)doQuery
 {
-    NSString *number = [NSString stringWithFormat:
-                        @"<?xml version=\"1.0\"?>"
-                        "<Request>"
-                        "<Header AllianceID=\"1\" SID=\"50\" TimeStamp=\"1234567890\" RequestType=\"OTA_Ping\" Signature=\"EF5FBA4AAB36FD044F8A13BA0D63DD13\" />"
-                        "<GroupProductListRequest>"
-                        "<BeginDate>2012-05-22</BeginDate>"
-                        "<EndDate>2012-05-30</EndDate>"
-                        "<KeyWords>上海</KeyWords>"
-                        "<Lowprice>0</Lowprice>"
-                        "<Upperprice>8000</Upperprice>"
-                        "<City>上海</City>"
-                        "<Topcount>100</Topcount>"
-                        "<SortType>1</SortType>"
-                        "<ProductType>1</ProductType>"
-                        "<Rank>0</Rank>"
-                        "</GroupProductListRequest>"
-                        "</Request>"];
-    /**
-     =MD5(123456789015393E07F94A25AAA373DBD3FA257BD3A50OTA_Ping)
-     = EF5FBA4AAB36FD044F8A13BA0D63DD13
-     
-     POST /Tuan/GroupProductList.asmx HTTP/1.1
-     Host: localhost
-     Content-Type: text/xml; charset=utf-8
-     Content-Length: length
-     SOAPAction: "http://ctrip.com/Request"
-     
-     <?xml version="1.0" encoding="utf-8"?>
-     <soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-     <soap:Body>
-     <Request xmlns="http://ctrip.com/">
-     <requestXML>string</requestXML>
-     </Request>
-     </soap:Body>
-     </soap:Envelope>
-     **/
+    NSString* c = [[MyMD5 md5:@"279950C8-CFB7-41CF-ADBE-463C434B0190"] uppercaseString];
+    NSString* allianceID = @"6145";
+    NSString* sID = @"159687";
+    double date = [NSDate timeIntervalSinceReferenceDate];
+    NSString* signature = [[MyMD5 md5:[NSString stringWithFormat:@"%f%@%@%@GroupProductList", date, allianceID, c, sID]] uppercaseString];
     
-    // 设置我们之后解析XML时用的关键字，与响应报文中Body标签之间的getMobileCodeInfoResult标签对应
-//    self.matchingElement = @"getMobileCodeInfoResult";
-    // 创建SOAP消息，内容格式就是网站上提示的请求报文的实体主体部分
+//    NSString *number = [NSString stringWithFormat:
+//                        @"<Request>"
+//                        "<Header AllianceID=\"%@\" SID=\"%@\" TimeStamp=\"%f\" RequestType=\"GroupProductList\" Signature=\"%@\" />"
+//                        "<GroupProductListRequest>"
+//                        "<BeginDate></BeginDate>"
+//                        "<EndDate></EndDate>"
+//                        "<KeyWords></KeyWords>"
+//                        "<Lowprice></Lowprice>"
+//                        "<Upperprice></Upperprice>"
+//                        "<City></City>"
+//                        "<Topcount>99</Topcount>"
+//                        "<SortType></SortType>"
+//                        "<ProductType></ProductType>"
+//                        "<Rank></Rank>"
+//                        "</GroupProductListRequest>"
+//                        "</Request>", allianceID, sID, date, signature];
+    
+    NSString *number = [NSString stringWithFormat:
+                       @"&lt;Request&gt;"
+                        "&lt;Header AllianceID=\"%@\" SID=\"%@\" TimeStamp=\"%f\" RequestType=\"GroupProductList\" Signature=\"%@\" /&gt;"
+                        "&lt;GroupProductListRequest&gt;"
+                        "&lt;RequestBody&gt; xmlns:xsi=\"http://www.opentravel.org/OTA/2003/05\" "
+                        "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" "
+                        "xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" "
+                        "&lt;BeginDate&gt;2013-01-22&lt;/BeginDate&gt;"
+                        "&lt;EndDate&gt;2012-03-14&lt;/EndDate&gt;"
+                        "&lt;KeyWords&gt;&lt;/KeyWords&gt;"
+                        "&lt;Lowprice&gt;&lt;/Lowprice&gt;"
+                        "&lt;Upperprice&gt;130&lt;/Upperprice&gt;"
+                        "&lt;City&gt;&lt;/City&gt;"
+                        "&lt;Topcount&gt;1&lt;/Topcount&gt;"
+                        "&lt;SortType&gt;&lt;/SortType&gt;"
+                        "&lt;ProductType&gt;&lt;/ProductType&gt;"
+                        "&lt;Rank&gt;&lt;/Rank&gt;"
+                        "&lt;/RequestBody&gt;"
+                        "&lt;/GroupProductListRequest&gt;"
+                        "&lt;/Request&gt;", allianceID, sID, date, signature];
+    
+//    NSString *number = [NSString stringWithFormat:
+//                        @"<?xml version=\"1.0\"?>"
+//                        "<Request>"
+//                        "<Header AllianceID=\"%@\" SID=\"%@\" TimeStamp=\"%f\" RequestType=\"GroupProductList\" Signature=\"%@\" />"
+//                        "<GroupProductListRequest>"
+//                        "<BeginDate>2012-05-22</BeginDate>"
+//                        "<EndDate>2013-03-14</EndDate>"
+//                        "<KeyWords>上海</KeyWords>"
+//                        "<Lowprice>0</Lowprice>"
+//                        "<Upperprice>8000</Upperprice>"
+//                        "<City>上海</City>"
+//                        "<Topcount>99</Topcount>"
+//                        "<SortType>1</SortType>"
+//                        "<ProductType>1</ProductType>"
+//                        "<Rank>0</Rank>"
+//                        "</GroupProductListRequest>"
+//                        "</Request>", allianceID, sID, date, signature];
+    
     NSString *soapMsg = [NSString stringWithFormat:
                          @"<?xml version=\"1.0\" encoding=\"utf-8\"?>"
-                         "<soap12:Envelope "
+                         "<soap:Envelope "
                          "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" "
                          "xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" "
-                         "xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">"
+                         "xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\">"
                          "<soap:Body>"
                          "<Request xmlns=\"http://ctrip.com/\">"
                          "<requestXML>%@</requestXML>"
                          "</Request>"
-                         "</getMobileCodeInfo>"
                          "</soap:Body>"
                          "</soap:Envelope>", number];
     
+//    NSString *soapMsg = [NSString stringWithFormat:
+//                         @"<?xml version=\"1.0\" encoding=\"utf-8\"?>"
+//                         "<soap12:Envelope "
+//                         "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" "
+//                         "xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" "
+//                         "xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">"
+//                         "<soap:Body>"
+//                         "<Request xmlns=\"http://ctrip.com/\">"
+//                         "<requestXML>%@</requestXML>"
+//                         "</Request>"
+//                         "</getMobileCodeInfo>"
+//                         "</soap:Body>"
+//                         "</soap:Envelope>", number];
+    
     // 将这个XML字符串打印出来
-    NSLog(@"%@", soapMsg);
+//    NSLog(@"%@", soapMsg);
     // 创建URL，内容是前面的请求报文报文中第二行主机地址加上第一行URL字段
     NSURL *url = [NSURL URLWithString: @"http://OpenAPI.ctrip.com/Tuan/GroupProductList.asmx"];
     // 根据上面的URL创建一个请求
@@ -133,7 +170,8 @@
                                               encoding:NSUTF8StringEncoding];
     
     // 打印出得到的XML
-    NSLog(@"%@", theXML);
+    NSLog(@"??:%@", theXML);
+    NSLog(@"end");
     // 使用NSXMLParser解析出我们想要的结果
 //    self.xmlParser = [[NSXMLParser alloc] initWithData: self.webData];
 //    [self.xmlParser setDelegate: self];

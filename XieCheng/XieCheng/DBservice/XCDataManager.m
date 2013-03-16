@@ -102,7 +102,7 @@
 //        NSString *name=[[NSString alloc] initWithFormat:@"%s", (char*)sqlite3_column_text(statement, 0)];
         NSString *name = [[NSString alloc] initWithCString:(char*)sqlite3_column_text(statement, 0) encoding:NSUTF8StringEncoding];
         int _id=sqlite3_column_int(statement, 1);
-        NSLog(@"row>>id %i, name %@",_id,name);
+//        NSLog(@"row>>id %i, name %@",_id,name);
         ShoppingObj *obj = [[ShoppingObj alloc] init];
         obj.m_HotelName = name;
         obj.m_ProductId = _id;

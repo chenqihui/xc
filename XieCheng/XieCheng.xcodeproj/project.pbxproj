@@ -25,6 +25,7 @@
 		74DB0E0A16EC953100F2F38E /* xiecheng.rdb in Resources */ = {isa = PBXBuildFile; fileRef = 74DB0E0916EC953100F2F38E /* xiecheng.rdb */; };
 		74DB0E0D16EC986400F2F38E /* XCDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 74DB0E0C16EC986400F2F38E /* XCDataManager.m */; };
 		74DB0E2416ECD48400F2F38E /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74DB0E2316ECD48400F2F38E /* libsqlite3.0.dylib */; };
+		74E9FAE316F4A18200EBA042 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 74E9FAE216F4A18200EBA042 /* MyMD5.m */; };
 		B1ABB8A816E9B232005CC730 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1ABB8A716E9B231005CC730 /* QuartzCore.framework */; };
 		B1ABB8AC16E9B30A005CC730 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1ABB8AA16E9B2FD005CC730 /* NavigationViewController.m */; };
 		B1ABB8B016E9B3AB005CC730 /* NaviButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B1ABB8AF16E9B3AB005CC730 /* NaviButton.m */; };
@@ -75,6 +76,8 @@
 		74DB0E0B16EC986400F2F38E /* XCDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCDataManager.h; sourceTree = "<group>"; };
 		74DB0E0C16EC986400F2F38E /* XCDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCDataManager.m; sourceTree = "<group>"; };
 		74DB0E2316ECD48400F2F38E /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		74E9FAE116F4A18200EBA042 /* MyMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMD5.h; sourceTree = "<group>"; };
+		74E9FAE216F4A18200EBA042 /* MyMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMD5.m; sourceTree = "<group>"; };
 		B1ABB8A716E9B231005CC730 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B1ABB8A916E9B2FD005CC730 /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavigationViewController.h; path = XieCheng/NavigationViewController.h; sourceTree = SOURCE_ROOT; };
 		B1ABB8AA16E9B2FD005CC730 /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavigationViewController.m; path = XieCheng/NavigationViewController.m; sourceTree = SOURCE_ROOT; };
@@ -241,6 +244,8 @@
 		749B447416E3A44E00E9C2C5 /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				74E9FAE116F4A18200EBA042 /* MyMD5.h */,
+				74E9FAE216F4A18200EBA042 /* MyMD5.m */,
 				749B447516E3A44E00E9C2C5 /* XCContext.h */,
 				749B447616E3A44E00E9C2C5 /* XCContext.m */,
 				7434520E16E7701100BA5354 /* ViewHelper.h */,
@@ -446,6 +451,7 @@
 				7444B3C416EB2EAF004D6BDC /* SOAPServiceViewController.m in Sources */,
 				74DB0E0D16EC986400F2F38E /* XCDataManager.m in Sources */,
 				B1C9E67216EDA67900144395 /* PullRefreshView.m in Sources */,
+				74E9FAE316F4A18200EBA042 /* MyMD5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

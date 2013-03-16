@@ -10,7 +10,7 @@
 
 #import "XCDataManager.h"
 
-#import "PullRefreshView.h"
+//#import "PullRefreshView.h"
 
 @interface ShoppingViewController : XCBaseViewController<UITableViewDelegate, UITableViewDataSource>
 {
@@ -20,7 +20,9 @@
     
     NSArray         *m_arData;
     
-    PullRefreshView *m_pullRefreshView;
+//    PullRefreshView *m_pullRefreshView;
+    
+//    UIButton* moreBtn;
 }
 
 @end
