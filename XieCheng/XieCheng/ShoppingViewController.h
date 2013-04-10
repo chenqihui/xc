@@ -9,10 +9,11 @@
 #import "XCBaseViewController.h"
 
 #import "XCDataManager.h"
+#import "SOAPServiceViewController.h"
 
 //#import "PullRefreshView.h"
 
-@interface ShoppingViewController : XCBaseViewController<UITableViewDelegate, UITableViewDataSource>
+@interface ShoppingViewController : XCBaseViewController<UITableViewDelegate, UITableViewDataSource, SOAPServiceViewControllerDelegate>
 {
     XCDataManager *xcdata;
     

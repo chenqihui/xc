@@ -60,20 +60,27 @@
     
 }
 
--(BOOL)shouldAutorotate
-{
-    return YES;
-}
+//-(BOOL)shouldAutorotate
+//{
+//    return YES;
+//}
+//
+//-(NSUInteger)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskLandscape;
+//}
+//
+//-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+//{
+//    return YES;
+//}
 
--(NSUInteger)supportedInterfaceOrientations
+#if __IPHONE_OS_VERSION_MIN_REQUIRED < __IPHONE_6_0
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return UIInterfaceOrientationMaskLandscape;
+    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
-
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-{
-    return YES;
-}
+#endif
 
 - (IBAction)showNaviView:(id)sender
 { 

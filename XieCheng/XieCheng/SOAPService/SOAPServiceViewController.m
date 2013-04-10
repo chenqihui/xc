@@ -23,6 +23,8 @@
 
 @implementation SOAPServiceViewController
 
+@synthesize m_SOAPServiceViewControllerDelegate;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,7 +37,9 @@
     NSString* allianceID = @"6145";
     NSString* sID = @"159687";
     double date = [NSDate timeIntervalSinceReferenceDate];
-    NSString* signature = [[MyMD5 md5:[NSString stringWithFormat:@"%f%@%@%@GroupProductList", date, allianceID, c, sID]] uppercaseString];
+    NSString* type = @"GroupProductList";
+    
+    NSString* signature = [[MyMD5 md5:[NSString stringWithFormat:@"%f%@%@%@%@", date, allianceID, c, sID, type]] uppercaseString];
     
 //    NSString *number = [NSString stringWithFormat:
 //                        @"<Request>"
@@ -61,13 +65,13 @@
                         "&lt;RequestBody&gt; xmlns:xsi=\"http://www.opentravel.org/OTA/2003/05\" "
                         "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" "
                         "xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" "
-                        "&lt;BeginDate&gt;2013-01-22&lt;/BeginDate&gt;"
-                        "&lt;EndDate&gt;2012-03-14&lt;/EndDate&gt;"
+                        "&lt;BeginDate&gt;2013-04-08&lt;/BeginDate&gt;"
+                        "&lt;EndDate&gt;2013-04-09&lt;/EndDate&gt;"//
                         "&lt;KeyWords&gt;&lt;/KeyWords&gt;"
                         "&lt;Lowprice&gt;&lt;/Lowprice&gt;"
                         "&lt;Upperprice&gt;130&lt;/Upperprice&gt;"
-                        "&lt;City&gt;&lt;/City&gt;"
-                        "&lt;Topcount&gt;1&lt;/Topcount&gt;"
+                        "&lt;City&gt;广州&lt;/City&gt;"
+                        "&lt;Topcount&gt;2&lt;/Topcount&gt;"
                         "&lt;SortType&gt;&lt;/SortType&gt;"
                         "&lt;ProductType&gt;&lt;/ProductType&gt;"
                         "&lt;Rank&gt;&lt;/Rank&gt;"
@@ -177,6 +181,10 @@
 //    [self.xmlParser setDelegate: self];
 //    [self.xmlParser setShouldResolveExternalEntities: YES];
 //    [self.xmlParser parse];
+    
+    if([m_SOAPServiceViewControllerDelegate respondsToSelector:@selector(doFinish:)]==YES)
+        [m_SOAPServiceViewControllerDelegate doFinish:nil];
+    
 }
 
 @end

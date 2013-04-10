@@ -7,7 +7,6 @@
 //
 
 #import "ShoppingViewController.h"
-#import "SOAPServiceViewController.h"
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -86,6 +85,18 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)newIndexPath
+{
+    NSIndexPath *scrollIndexPath;
+//    if (newIndexPath.row + 20 < [timeZoneNames count]) {
+//        scrollIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row+20 inSection:newIndexPath.section];
+//    } else {
+        scrollIndexPath = [NSIndexPath indexPathForRow:newIndexPath.row+1 inSection:newIndexPath.section];
+//    }
+    [shoppinglist selectRowAtIndexPath:scrollIndexPath animated:YES
+                        scrollPosition:UITableViewScrollPositionMiddle];
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 100;
@@ -112,6 +123,7 @@
 -(void)btn
 {
     SOAPServiceViewController* service = [[SOAPServiceViewController alloc] init];
+    service.m_SOAPServiceViewControllerDelegate = self;
     [service doQuery];
     [service release];
     
@@ -125,6 +137,15 @@
 //    [xcdata query];
     [xcdata close];
     [m_arData release];
+}
+
+- (void)doFinish:(NSString *)error
+{
+    if (error == nil) {
+        NSLog(@"恭喜");
+    }else{
+        NSLog(@"%@", error);
+    }
 }
 
 - (void)dealloc
